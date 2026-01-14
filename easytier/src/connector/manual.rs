@@ -297,12 +297,12 @@ impl ManualConnectorManager {
             for addr in addrs {
                 if addr.is_ipv4() {
                     if !has_ipv4 {
-                        ip_versions.insert(0, IpVersion::V4);
+                        ip_versions.push(0, IpVersion::V4);
                     }
                     has_ipv4 = true;
                 } else if addr.is_ipv6() {
                     if !has_ipv6 {
-                        ip_versions.push(IpVersion::V6);
+                        ip_versions.insert(IpVersion::V6);
                     }
                     has_ipv6 = true;
                 }
